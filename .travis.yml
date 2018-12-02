@@ -16,7 +16,7 @@ matrix:
   fast_finish: true
 before_script:
 - composer self-update
-- composer install --dev
+- composer install
 script:
 - mkdir build
 - mkdir build/coverage
