@@ -21,7 +21,7 @@
 
 **Pour commencer**
 
-    require '../vendor/autoload.php';
+    require dirname(__DIR__) . '/vendor/autoload.php';
 	use Absmoca\Leboncoin;
 	use Absmoca\Annonce;
 
