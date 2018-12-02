@@ -1,0 +1,1561 @@
+[{
+    "id": "71",
+    "label": "EMPLOI",
+    "name": "Emploi",
+    "channel": "_emploi_",
+    "subcategories": [{
+        "id": "33",
+        "label": "Offres d'emploi",
+        "name": "Offres d'emploi",
+        "channel": "offres_d_emploi",
+        "rights": {
+            "private": {
+                "buy": true
+            },
+            "pro": {
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un emploi."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un poste à pourvoir."
+            }
+        }
+    }]
+}, {
+    "id": "1",
+    "label": "VÉHICULES",
+    "name": "Véhicules",
+    "channel": "_vehicules_",
+    "subcategories": [{
+        "id": "2",
+        "label": "Voitures",
+        "name": "Voitures",
+        "channel": "voitures",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez une voiture."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez une voiture."
+            }
+        }
+    }, {
+        "id": "3",
+        "label": "Motos",
+        "name": "Motos",
+        "channel": "motos",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez une moto."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez une moto."
+            }
+        }
+    }, {
+        "id": "4",
+        "label": "Caravaning",
+        "name": "Caravaning",
+        "channel": "caravaning",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez une caravane."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez une caravane."
+            }
+        }
+    }, {
+        "id": "5",
+        "label": "Utilitaires",
+        "name": "Utilitaires",
+        "channel": "utilitaires",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un utilitaire."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un utilitaire."
+            }
+        }
+    }, {
+        "id": "6",
+        "label": "Équipement auto",
+        "name": "Équipement auto",
+        "channel": "equipement_auto",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un équipement auto."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un équipement auto."
+            }
+        }
+    }, {
+        "id": "44",
+        "label": "Équipement moto",
+        "name": "Équipement moto",
+        "channel": "equipement_moto",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un équipement moto."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un équipement moto."
+            }
+        }
+    }, {
+        "id": "50",
+        "label": "Équipement caravaning",
+        "name": "Équipement caravaning",
+        "channel": "equipement_caravaning",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un équipement caravaning."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un équipement caravaning."
+            }
+        }
+    }, {
+        "id": "7",
+        "label": "Nautisme",
+        "name": "Nautisme",
+        "channel": "nautisme",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien nautique."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien nautique."
+            }
+        }
+    }, {
+        "id": "51",
+        "label": "Équipement nautisme",
+        "name": "Équipement nautisme",
+        "channel": "equipement_nautisme",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un équipement nautique."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un équipement nautique."
+            }
+        }
+    }]
+}, {
+    "id": "8",
+    "label": "IMMOBILIER",
+    "name": "Immobilier",
+    "channel": "_immobilier_",
+    "subcategories": [{
+        "id": "9",
+        "label": "Ventes immobilières",
+        "name": "Ventes immobilières",
+        "channel": "ventes_immobilieres",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien immobilier."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien immobilier."
+            }
+        }
+    }, {
+        "id": "10",
+        "label": "Locations",
+        "name": "Locations",
+        "channel": "locations",
+        "rights": {
+            "private": {
+                "let": true,
+                "rent": true
+            },
+            "pro": {
+                "let": true,
+                "rent": true
+            }
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez un bien en location."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien à louer."
+            }
+        }
+    }, {
+        "id": "11",
+        "label": "Colocations",
+        "name": "Colocations",
+        "channel": "colocations",
+        "rights": {
+            "private": {
+                "let": true,
+                "rent": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez un bien en colocation."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez une colocation."
+            }
+        }
+    }, {
+        "id": "13",
+        "label": "Bureaux & Commerces",
+        "name": "Bureaux & Commerces",
+        "channel": "bureaux_commerces",
+        "rights": {
+            "private": {
+                "buy": true,
+                "let": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "let": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien à vendre ou à louer."
+            },
+            "let": {
+                "label": "Location",
+                "description": "Vous proposez un bien à louer."
+            },
+            "sell": {
+                "label": "Vente",
+                "description": "Vous proposez un bien à vendre."
+            }
+        }
+    }]
+}, {
+    "id": "66",
+    "label": "VACANCES",
+    "name": "Vacances",
+    "channel": "_vacances_",
+    "subcategories": [{
+        "id": "12",
+        "label": "Locations & Gîtes",
+        "name": "Locations & Gîtes",
+        "channel": "locations_gites",
+        "rights": {
+            "private": {
+                "let": true,
+                "rent": true
+            },
+            "pro": {
+                "let": true,
+                "rent": true
+            }
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez une location de vacances ou un gîte."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez une location de vacances ou un gîte."
+            }
+        }
+    }, {
+        "id": "67",
+        "label": "Chambres d'hôtes",
+        "name": "Chambres d'hôtes",
+        "channel": "chambres_d_hotes",
+        "rights": {
+            "private": {
+                "let": true,
+                "rent": true
+            },
+            "pro": {
+                "let": true,
+                "rent": true
+            }
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez une chambre d'hôtes."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez une chambre d'hôtes."
+            }
+        }
+    }, {
+        "id": "68",
+        "label": "Campings",
+        "name": "Campings",
+        "channel": "campings",
+        "rights": {
+            "private": {
+                "let": true,
+                "rent": true
+            },
+            "pro": {
+                "let": true,
+                "rent": true
+            }
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez un bien en location."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien à louer."
+            }
+        }
+    }, {
+        "id": "69",
+        "label": "Hôtels",
+        "name": "Hôtels",
+        "channel": "hotels",
+        "rights": {
+            "private": {},
+            "pro": {
+                "let": true,
+                "rent": true
+            }
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez des chambres d'hôtel."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez une chambre d'hôtel."
+            }
+        }
+    }, {
+        "id": "70",
+        "label": "Hébergements insolites",
+        "name": "Hébergements insolites",
+        "channel": "hebergements_insolites",
+        "rights": {
+            "private": {
+                "let": true,
+                "rent": true
+            },
+            "pro": {
+                "let": true,
+                "rent": true
+            }
+        },
+        "ad_types": {
+            "let": {
+                "label": "Offre",
+                "description": "Vous proposez un hébergement insolite."
+            },
+            "rent": {
+                "label": "Demande",
+                "description": "Vous recherchez un hébergement insolite."
+            }
+        }
+    }]
+}, {
+    "id": "14",
+    "label": "MULTIMÉDIA",
+    "name": "Multimédia",
+    "channel": "_multimedia_",
+    "subcategories": [{
+        "id": "15",
+        "label": "Informatique",
+        "name": "Informatique",
+        "channel": "informatique",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien informatique."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien informatique."
+            }
+        }
+    }, {
+        "id": "43",
+        "label": "Consoles & Jeux vidéo",
+        "name": "Consoles & Jeux vidéo",
+        "channel": "consoles_jeux_video",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez une console ou un jeu vidéo."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez une console ou un jeu vidéo."
+            }
+        }
+    }, {
+        "id": "16",
+        "label": "Image & Son",
+        "name": "Image & Son",
+        "channel": "image_son",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }, {
+        "id": "17",
+        "label": "Téléphonie",
+        "name": "Téléphonie",
+        "channel": "telephonie",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }]
+}, {
+    "id": "24",
+    "label": "LOISIRS",
+    "name": "Loisirs",
+    "channel": "_loisirs_",
+    "subcategories": [{
+        "id": "25",
+        "label": "DVD - Films",
+        "name": "DVD - Films",
+        "channel": "dvd_films",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un bien."
+            }
+        }
+    }, {
+        "id": "26",
+        "label": "CD - Musique",
+        "name": "CD - Musique",
+        "channel": "cd_musique",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un bien."
+            }
+        }
+    }, {
+        "id": "27",
+        "label": "Livres",
+        "name": "Livres",
+        "channel": "livres",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un livre."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un livre."
+            }
+        }
+    }, {
+        "id": "28",
+        "label": "Animaux",
+        "name": "Animaux",
+        "channel": "animaux",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous cherchez à acheter un animal."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un animal."
+            }
+        }
+    }, {
+        "id": "55",
+        "label": "Vélos",
+        "name": "Vélos",
+        "channel": "velos",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un vélo."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un vélo."
+            }
+        }
+    }, {
+        "id": "29",
+        "label": "Sports & Hobbies",
+        "name": "Sports & Hobbies",
+        "channel": "sports_hobbies",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }, {
+        "id": "30",
+        "label": "Instruments de musique",
+        "name": "Instruments de musique",
+        "channel": "instruments_de_musique",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }, {
+        "id": "40",
+        "label": "Collection",
+        "name": "Collection",
+        "channel": "collection",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }, {
+        "id": "41",
+        "label": "Jeux & Jouets",
+        "name": "Jeux & Jouets",
+        "channel": "jeux_jouets",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }, {
+        "id": "48",
+        "label": "Vins & Gastronomie",
+        "name": "Vins & Gastronomie",
+        "channel": "vins_gastronomie",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un bien."
+            }
+        }
+    }]
+}, {
+    "id": "56",
+    "label": "MATÉRIEL PROFESSIONNEL",
+    "name": "Matériel professionnel",
+    "channel": "_materiel_professionnel_",
+    "subcategories": [{
+        "id": "57",
+        "label": "Matériel agricole",
+        "name": "Matériel agricole",
+        "channel": "materiel_agricole",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du matériel agricole."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du matériel agricole."
+            }
+        }
+    }, {
+        "id": "58",
+        "label": "Transport - Manutention",
+        "name": "Transport - Manutention",
+        "channel": "transport_manutention",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du matériel de transport ou de manutention."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du matériel de transport ou de manutention."
+            }
+        }
+    }, {
+        "id": "59",
+        "label": "BTP - Chantier gros-oeuvre",
+        "name": "BTP - Chantier gros-oeuvre",
+        "channel": "btp_chantier_gros_oeuvre",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du matériel BTP."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du matériel BTP."
+            }
+        }
+    }, {
+        "id": "60",
+        "label": "Outillage - Matériaux 2nd-oeuvre",
+        "name": "Outillage - Matériaux 2nd-oeuvre",
+        "channel": "outillage_materiaux_2nd_oeuvre",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez de l'outillage ou du matériel 2nd-oeuvre."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez de l'outillage ou du matériel 2nd-oeuvre."
+            }
+        }
+    }, {
+        "id": "32",
+        "label": "Équipements industriels",
+        "name": "Équipements industriels",
+        "channel": "equipements_industriels",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez des équipements industriels."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez des équipements industriels."
+            }
+        }
+    }, {
+        "id": "61",
+        "label": "Restauration - Hôtellerie",
+        "name": "Restauration - Hôtellerie",
+        "channel": "restauration_hotellerie",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du matériel de restauration - hôtellerie."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du matériel de restauration - hôtellerie."
+            }
+        }
+    }, {
+        "id": "62",
+        "label": "Fournitures de bureau",
+        "name": "Fournitures de bureau",
+        "channel": "fournitures_de_bureau",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez des fournitures de bureau."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez des fournitures de bureau."
+            }
+        }
+    }, {
+        "id": "63",
+        "label": "Commerces & Marchés",
+        "name": "Commerces & Marchés",
+        "channel": "commerces_marches",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du matériel de commerces & marchés."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du matériel de commerces & marchés."
+            }
+        }
+    }, {
+        "id": "64",
+        "label": "Matériel médical",
+        "name": "Matériel médical",
+        "channel": "materiel_medical",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du matériel médical."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du matériel médical."
+            }
+        }
+    }]
+}, {
+    "id": "31",
+    "label": "SERVICES",
+    "name": "Services",
+    "channel": "_services_",
+    "subcategories": [{
+        "id": "34",
+        "label": "Prestations de services",
+        "name": "Prestations de services",
+        "channel": "prestations_de_services",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez une aide."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez vos services."
+            }
+        }
+    }, {
+        "id": "35",
+        "label": "Billetterie",
+        "name": "Billetterie",
+        "channel": "billetterie",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un billet."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un billet."
+            }
+        }
+    }, {
+        "id": "49",
+        "label": "Évènements",
+        "name": "Évènements",
+        "channel": "evenements",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un évènement."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un évènement."
+            }
+        }
+    }, {
+        "id": "36",
+        "label": "Cours particuliers",
+        "name": "Cours particuliers",
+        "channel": "cours_particuliers",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un professeur de cours particuliers."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez de donner des cours particuliers."
+            }
+        }
+    }, {
+        "id": "65",
+        "label": "Covoiturage",
+        "name": "Covoiturage",
+        "channel": "covoiturage",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un covoiturage."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un covoiturage."
+            }
+        }
+    }]
+}, {
+    "id": "18",
+    "label": "MAISON",
+    "name": "Maison",
+    "channel": "_maison_",
+    "subcategories": [{
+        "id": "19",
+        "label": "Ameublement",
+        "name": "Ameublement",
+        "channel": "ameublement",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un meuble."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un meuble."
+            }
+        }
+    }, {
+        "id": "20",
+        "label": "Électroménager",
+        "name": "Électroménager",
+        "channel": "electromenager",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez de l'électroménager."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez de l'électroménager."
+            }
+        }
+    }, {
+        "id": "45",
+        "label": "Arts de la table",
+        "name": "Arts de la table",
+        "channel": "arts_de_la_table",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un objet d'art de la table."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un objet d'art de la table."
+            }
+        }
+    }, {
+        "id": "39",
+        "label": "Décoration",
+        "name": "Décoration",
+        "channel": "decoration",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un objet de décoration."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un objet de décoration."
+            }
+        }
+    }, {
+        "id": "46",
+        "label": "Linge de maison",
+        "name": "Linge de maison",
+        "channel": "linge_de_maison",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez du linge de maison."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez du linge de maison."
+            }
+        }
+    }, {
+        "id": "21",
+        "label": "Bricolage",
+        "name": "Bricolage",
+        "channel": "bricolage",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un bien."
+            }
+        }
+    }, {
+        "id": "52",
+        "label": "Jardinage",
+        "name": "Jardinage",
+        "channel": "jardinage",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un bien."
+            }
+        }
+    }, {
+        "id": "22",
+        "label": "Vêtements",
+        "name": "Vêtements",
+        "channel": "vetements",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un vêtement."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un vêtement."
+            }
+        }
+    }, {
+        "id": "53",
+        "label": "Chaussures",
+        "name": "Chaussures",
+        "channel": "chaussures",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez des chaussures."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez des chaussures."
+            }
+        }
+    }, {
+        "id": "47",
+        "label": "Accessoires & Bagagerie",
+        "name": "Accessoires & Bagagerie",
+        "channel": "accessoires_bagagerie",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un accessoire ou un bagage."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un accessoire ou un bagage."
+            }
+        }
+    }, {
+        "id": "42",
+        "label": "Montres & Bijoux",
+        "name": "Montres & Bijoux",
+        "channel": "montres_bijoux",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un bien."
+            }
+        }
+    }, {
+        "id": "23",
+        "label": "Équipement bébé",
+        "name": "Équipement bébé",
+        "channel": "equipement_bebe",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez des objets pour bébé."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez des objets pour bébé."
+            }
+        }
+    }, {
+        "id": "54",
+        "label": "Vêtements bébé",
+        "name": "Vêtements bébé",
+        "channel": "vetements_bebe",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {
+                "buy": true,
+                "sell": true
+            }
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un vêtement pour bébé."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous vendez un vêtement pour bébé."
+            }
+        }
+    }]
+}, {
+    "id": "37",
+    "label": "DIVERS",
+    "name": "Divers",
+    "channel": "_divers_",
+    "subcategories": [{
+        "id": "38",
+        "label": "Autres",
+        "name": "Autres",
+        "channel": "autres",
+        "rights": {
+            "private": {
+                "buy": true,
+                "sell": true
+            },
+            "pro": {}
+        },
+        "ad_types": {
+            "buy": {
+                "label": "Demande",
+                "description": "Vous recherchez un bien."
+            },
+            "sell": {
+                "label": "Offre",
+                "description": "Vous proposez un bien."
+            }
+        }
+    }]
+}]
+

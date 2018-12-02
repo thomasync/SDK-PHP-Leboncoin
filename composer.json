@@ -1,0 +1,17 @@
+{
+    "name": "absmoca/leboncoin",
+    "description": "SDK du plus célèbre site entre particuliers en France",
+    "authors": [
+        {
+            "name": "Thomas Cauquil",
+            "email": "contact@thomascauquil.fr",
+            "homepage": "https://thomascauquil.fr"
+        }
+    ],
+    "require": {
+    	"php": ">=5.4.0"
+    },
+    "autoload": {
+    	"psr-4":  {"Absmoca\\": "Leboncoin/"}
+    }
+}
