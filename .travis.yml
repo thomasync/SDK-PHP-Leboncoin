@@ -17,6 +17,4 @@ before_script:
 - composer self-update
 - composer install
 script:
-- mkdir build
-- mkdir build/coverage
 - vendor/bin/phpunit
