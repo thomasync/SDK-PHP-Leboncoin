@@ -222,7 +222,7 @@ class Leboncoin
     {
         $response = $this->callApi("finder/classified/".$id);
 
-        return new Annonce($response);
+        return Annonce::parse($response);
     }
 
     /**
