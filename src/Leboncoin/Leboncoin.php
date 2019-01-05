@@ -2,6 +2,8 @@
 
 namespace Absmoca;
 
+use http\Exception\RuntimeException;
+
 /**
  * API LEBONCOIN PHP
  *
@@ -144,62 +146,80 @@ class Leboncoin
      */
     public function filterMapGetAnnonces($params, $page)
     {
+        // Limit
         $post = array("limit" => $this->resultLimit, "limit_alu" => 3, "filters" => array());
 
+        // Query
         if (isset($params['query'])) {
             $post['filters']['keywords']['text'] = htmlspecialchars($params['query']);
         }
+
+        // Title only
         if (isset($params['title_only']) && $params['title_only'] == true) {
             $post['filters']['keywords']['type'] = "subject";
         }
 
+        // Context
         if (isset($params['context'])) {
             $post['context'] = 'default';
         }
 
+        // Store
         if (isset($params['store_id'])) {
             $post['filters']['owner']['store_id'] = $params['store_id'];
         }
+
+        // User
         if (isset($params['user_id'])) {
             $post['filters']['owner']['user_id'] = $params['user_id'];
         }
 
+        // Category
         if (isset($params['category'])) {
             $post['filters']['category'] = array('id' => (string)$params['category']);
         } else {
             $post['filters']['category'] = array();
         }
 
+        // Location
+        $l = [];
         if (isset($params['location'])) {
-            if (is_array($params['location'])) {
+            if (isset($params['location']['regions'])) {
+                foreach ($params['location']['regions'] as $region) {
+                    $l["regions"][] = (string)$region;
+                }
+
+            }
+            if (isset($params['location']['zipcodes'])) {
+                $l['city_zipcodes'] = [];
+                foreach ($params['location']['zipcodes'] as $zipcode) {
+                    $l['city_zipcodes'][] = array("zipcode" => (string)$zipcode);
+                }
+            }
+            /*if (empty($l) && is_array($params['location'])) {
                 $l = array();
                 $z = array();
                 foreach ($params['location'] as $ll) {
-                    if ($ll->zipcode) {
-                        $z[] = array("zipcode" => (string)$ll['zipcode']);
+                    if ($ll['zipcode']) {
+                        $z[] = array("zipcode" => $ll['zipcode']);
                     }
                 }
                 if (count($z) > 0) {
                     $l['city_zipcodes'] = $z;
                 } else {
-                    $l["regions"] = array((string)$params['location'][0]['region_id']);
+                    $l["regions"] = array($params['location'][0]['region_id']);
                 }
-            } else {
-                $l = array("regions" => array((string)$params['location']['region_id']));
-                if ($params['location']['zipcode']) {
-                    $l['city_zipcodes'] = array("zipcode" => (string)$params['location']['zipcode']);
-                }
-            }
-        } else {
-            $l = array();
+            }*/
         }
         $post['filters']['location'] = $l;
 
+        // Sort
         if (isset($params['sortby'])) {
             $post['sort_by'] = key($params['sortby']);
             $post['sort_order'] = $params['sortby'][$post['sort_by']];
         }
 
+        // private
         if (isset($params['particuliers']) && $params['particuliers'] == false) {
             $post['owner_type'] = "pro";
         } elseif (isset($params['professionnels']) && $params['professionnels'] == false) {
@@ -208,6 +228,7 @@ class Leboncoin
 
         //$post['ranges'] = array();
 
+        // Offset
         $post['offset'] = ($post['limit'] * $page);
 
         return json_encode($post);
@@ -383,8 +404,13 @@ class Leboncoin
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $output = curl_exec($ch);
+
+        $status = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+        switch ($status) {
+            case 400:
+                throw new \RuntimeException('API a répondu 400 : bad request');
+        }
 
         curl_close($ch);
 

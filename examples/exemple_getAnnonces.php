@@ -9,7 +9,12 @@ $params = array(
 	"query" => "Oeuvre d'art",
 	"title_only" => true,
 	"category" => $lbc->searchCategory("Décoration")->id,
-	"sortby" => array("price" => "desc")
+	"sortby" => array("price" => "desc"),
+    "location" => [
+        'regions' => [
+            6,
+        ]
+    ]
 );
 
 $lbc->setResultLimit(10);
