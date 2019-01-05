@@ -17,6 +17,12 @@
 	- Rechercher toutes ses annonces
 	- Gérer le compte
 
+## Installation
+
+```bash
+composer require absmoca/leboncoin
+```
+
 ## Documentation
 
 **Pour commencer**
