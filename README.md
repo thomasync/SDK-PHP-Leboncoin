@@ -21,19 +21,26 @@
 
 **Pour commencer**
 
-    require dirname(__DIR__) . '/vendor/autoload.php';
+```php
+    require __DIR__ . '/vendor/autoload.php';
+    
 	use Absmoca\Leboncoin;
-	use Absmoca\Annonce;
+```
 
 **Récuperer les annonces**
 
+```php
     $params = array(
 		"query" => "Oeuvre d'art"
 	);
-	$annonces = Leboncoin::getAnnonces($params);
+	
+	$lbc = new Leboncoin();
+	$annonces = $lbc->getAnnonces($params);
+```
 
 **Options**
 
+```php
     $params = array(
 		"query" => "Oeuvre d'art",
 		"title_only" => true,
@@ -45,32 +52,39 @@
 		"sortby" => array("price" => "desc"),
 		"particuliers" => false
 	);
+```
 
 **Limiter le nombre de résultats**
 
-    Leboncoin::nombreResultats(10);
+```php
+	$lbc = new Leboncoin();
+	$annonces = $lbc->getAnnonces($params);
+```
 
 **Annonces d'un utilisateur**
 
+```php
     $params = array(
 		"sortby" => array("price" => "asc")
 	);
-	$annonces = Leboncoin::getAnnoncesUser("a2db2eb9-6330-4ad7-9442-a1SJ09c9f236", $params);
+	
+	$lbc = new Leboncoin();
+	$annonces = $lbc->getAnnoncesUser("a2db2eb9-6330-4ad7-9442-a1SJ09c9f236", $params);
+```
 
 **Récupérer une annonce**
 
-    use Absmoca\Annonce;
-    $annonce = new Annonce(1512169842);
+```php
+	$lbc = new Leboncoin();
+    $annonce = $lbc->getAnnonce(1512169842);
+```
 
 **Connexion au compte**
 
-    use Absmoca\User;
-    $account = new User();
-    $account->connexion('user@gmail.com', 'pasSworD1289');
-
-**Déconnexion du compte**
-
-    $account->logout();
+```php
+	$lbc = new Leboncoin();
+    $lbc->login('user@gmail.com', 'pasSworD1289');
+```
 
 Cauquil Thomas | https://thomascauquil.fr
 
