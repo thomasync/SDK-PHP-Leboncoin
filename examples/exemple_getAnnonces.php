@@ -8,7 +8,7 @@ $lbc = new Leboncoin();
 $params = array(
 	"query" => "Oeuvre d'art",
 	"title_only" => true,
-	"category" => Leboncoin::searchCategory("Décoration")->id,
+	"category" => $lbc->searchCategory("Décoration")->id,
 	"sortby" => array("price" => "desc")
 );
 

@@ -165,9 +165,9 @@ class Leboncoin
         }
 
         if (isset($params['category'])) {
-            $post['filters']['category'] = (Object)array('id' => (string)$params['category']);
+            $post['filters']['category'] = array('id' => (string)$params['category']);
         } else {
-            $post['filters']['category'] = (Object)array();
+            $post['filters']['category'] = array();
         }
 
         if (isset($params['location'])) {
@@ -176,22 +176,22 @@ class Leboncoin
                 $z = array();
                 foreach ($params['location'] as $ll) {
                     if ($ll->zipcode) {
-                        $z[] = (Object)array("zipcode" => (string)$ll->zipcode);
+                        $z[] = array("zipcode" => (string)$ll['zipcode']);
                     }
                 }
                 if (count($z) > 0) {
                     $l['city_zipcodes'] = $z;
                 } else {
-                    $l["regions"] = array((string)$params['location'][0]->region_id);
+                    $l["regions"] = array((string)$params['location'][0]['region_id']);
                 }
             } else {
-                $l = array("regions" => array((string)$params['location']->region_id));
-                if ($params['location']->zipcode) {
-                    $l['city_zipcodes'] = array((Object)array("zipcode" => (string)$params['location']->zipcode));
+                $l = array("regions" => array((string)$params['location']['region_id']));
+                if ($params['location']['zipcode']) {
+                    $l['city_zipcodes'] = array("zipcode" => (string)$params['location']['zipcode']);
                 }
             }
         } else {
-            $l = (object)array();
+            $l = array();
         }
         $post['filters']['location'] = $l;
 
