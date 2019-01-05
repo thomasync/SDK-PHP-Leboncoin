@@ -55,12 +55,12 @@ class Annonce
     protected $attributes;
 
     /**
-     * @var object(region_id,region_name,department_id,department_name,city_label,city,zipcode,lat,lng,source,provider,is_shape) Localisation de l'annonce
+     * @var array(region_id,region_name,department_id,department_name,city_label,city,zipcode,lat,lng,source,provider,is_shape) Localisation de l'annonce
      */
     protected $location;
 
     /**
-     * @var object(store_id,user_id,type,name,no_salesmen) Infos sur le propriétaire de l'annonce
+     * @var array(store_id,user_id,type,name,no_salesmen) Infos sur le propriétaire de l'annonce
      */
     protected $owner;
 
@@ -90,8 +90,8 @@ class Annonce
             (isset($data->images->urls) && count($data->images->urls) > 0) ? $data->images->urls : null
         );
         $annonce->setAttributes((isset($data->attributes)) ? $data->attributes : null);
-        $annonce->setLocation($data->location);
-        $annonce->setOwner($data->owner);
+        $annonce->setLocation((array)$data->location);
+        $annonce->setOwner((array)$data->owner);
         $annonce->setPhone((boolean)$data->has_phone);
 
         return $annonce;
@@ -268,33 +268,33 @@ class Annonce
     }
 
     /**
-     * @return object
+     * @return array
      */
-    public function getLocation(): object
+    public function getLocation(): array
     {
         return $this->location;
     }
 
     /**
-     * @param object $location
+     * @param array $location
      */
-    public function setLocation(object $location): void
+    public function setLocation(array $location): void
     {
         $this->location = $location;
     }
 
     /**
-     * @return object
+     * @return array
      */
-    public function getOwner(): object
+    public function getOwner(): array
     {
         return $this->owner;
     }
 
     /**
-     * @param object $owner
+     * @param array $owner
      */
-    public function setOwner(object $owner): void
+    public function setOwner(array $owner): void
     {
         $this->owner = $owner;
     }
