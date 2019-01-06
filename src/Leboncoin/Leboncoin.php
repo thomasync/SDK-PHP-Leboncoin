@@ -2,8 +2,6 @@
 
 namespace Absmoca;
 
-use http\Exception\RuntimeException;
-
 /**
  * API LEBONCOIN PHP
  *
@@ -85,6 +83,7 @@ class Leboncoin
 
     /**
      * Permet de changer le nombre de résultats obtenus par requete
+     *
      * @param integer $resultLimit
      */
     public function setResultLimit($resultLimit)
@@ -95,6 +94,7 @@ class Leboncoin
 
     /**
      * Permet la recherche d'annonces via parametres
+     *
      * @param array $params (query, title_only, category, location, sortby, (particuliers|professionnels))
      * ['query'] string: Nom de la recherche
      * ['title_only'] boolean: Recherche uniquement "query" dans le titre
@@ -104,7 +104,7 @@ class Leboncoin
      * ['particuliers'] boolean(false) : Masque les annonces de particuliers,
      * ['professionnels'] boolean(false) : Masque les annonces de professionnels
      * @param integer $page Numéro de la page
-     * @return Object
+     * @return Annonce[]
      */
     public function getAnnonces($params, $page = 0)
     {
@@ -127,7 +127,7 @@ class Leboncoin
      * @param string $userId
      * @param  boolean|array $params Parametres donnés à la recherche (voir getAnnonces)
      * @param  integer $page Numéro de le page
-     * @return Object          Retourne le résultat de getAnnonces
+     * @return Annonce[]          Retourne le résultat de getAnnonces
      */
     public function getAnnoncesUser($userId, $params = null, $page = 0)
     {
@@ -236,8 +236,9 @@ class Leboncoin
 
     /**
      * Rechercher une annonce via son ID depuis la classe Annonce
+     *
      * @param  integer $id ID de l'annonce
-     * @return object
+     * @return Annonce
      */
     public function getAnnonce($id)
     {
@@ -248,6 +249,7 @@ class Leboncoin
 
     /**
      * Construit l'appel de l'API
+     *
      * @param  string $base Repertoire de l'API
      * @param  string $post Données de la recherche
      * @return object
@@ -261,6 +263,7 @@ class Leboncoin
 
     /**
      * Construit l'appel de l'API avec un access authentifié
+     *
      * @param  string $base Repertoire de l'API
      * @param  string $access Token d'utilisateur
      * @param  string $post Données de la recherche
@@ -275,6 +278,7 @@ class Leboncoin
 
     /**
      * Récupère les catégories des annonces dans le fichier categories.json
+     *
      * @return array Liste des catégories
      */
     public function categories()
@@ -296,6 +300,7 @@ class Leboncoin
 
     /**
      * Récupère l'id de la catégorie par rapport à son nom
+     *
      * @param  string $n Nom de la categorie
      * @return object
      */
@@ -315,6 +320,7 @@ class Leboncoin
 
     /**
      * Recherche un lieu par son nom
+     *
      * @param string $n Lieu à rechercher
      * @param boolean $precis Si vrai récupère seulement le premier résultat de façon précise (pas la région)
      * @return array of object(city, zipcode, region_id, department_id, label)
@@ -339,6 +345,7 @@ class Leboncoin
 
     /**
      * Récupère les endroits des annonces dans le fichier locations.json
+     *
      * @return array of object(id, name)
      */
     public function locations()
@@ -351,6 +358,7 @@ class Leboncoin
 
     /**
      * Supprime tous les caractères spéciaux
+     *
      * @param  string $str Chaine à utiliser
      * @return string
      */
@@ -361,6 +369,7 @@ class Leboncoin
 
     /**
      * Récuperer des données via une requete HTTP
+     *
      * @param  string $url Lien où l'on vas récuperer les données
      * @param  (string|boolean) $post Si des données POST seront à envoyer
      * @param  (string|boolean) $access Pour donner un token d'access
@@ -419,6 +428,7 @@ class Leboncoin
 
     /**
      * Connexion de l'utilisateur
+     *
      * @param  string $username Adresse email
      * @param  string $password Mot de passe
      * @return boolean          Retourne le résultat de la connexion, si vrai appelle getInfosAccount
@@ -443,7 +453,7 @@ class Leboncoin
     /**
      * Récupère les infos de l'utilisateur
      */
-    public function getInfosAccount()
+    protected function getInfosAccount()
     {
         $call = $this->callApiLogged('api/accounts/v1/accounts/me/personaldata', $this->token);
 
@@ -473,9 +483,10 @@ class Leboncoin
 
     /**
      * Récupérer les annonces de l'utilisateur connecté
+     *
      * @param  boolean|array $params Parametres donnés à la recherche (voir getAnnonces)
      * @param  integer $page Numéro de le page
-     * @return Object          Retourne le résultat de getAnnoncesUser
+     * @return Annonce[]          Retourne le résultat de getAnnoncesUser
      */
     public function getMyAnnonces($params = false, $page = 0)
     {
