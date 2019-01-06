@@ -1,3 +1,6 @@
+## 2.0
+- Amélioration du code
+- Utilisation d'objets et plus d'appels static
 ## 1.1
 - Ajout de composer
 - Correction de bogues

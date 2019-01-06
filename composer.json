@@ -9,12 +9,14 @@
         }
     ],
     "require": {
-    	"php": ">=5.4.0"
+    	"php": ">=7.1",
+        "ext-json": "^1.6",
+        "ext-curl": "^7.1",
+        "ext-mbstring": "^7.1"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=4.8.36"
     },
     "autoload": {
-    	"psr-4":  {"Absmoca\\": "Leboncoin/"}
+    	"psr-4":  {"Absmoca\\": "src/Leboncoin/"}
     }
 }

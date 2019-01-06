@@ -17,60 +17,80 @@
 	- Rechercher toutes ses annonces
 	- Gérer le compte
 
+## Installation
+
+```bash
+composer require absmoca/leboncoin
+```
+
 ## Documentation
 
 **Pour commencer**
 
-    require dirname(__DIR__) . '/vendor/autoload.php';
-	use Absmoca\Leboncoin;
-	use Absmoca\Annonce;
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+use Absmoca\Leboncoin;
+```
 
 **Récuperer les annonces**
 
-    $params = array(
-		"query" => "Oeuvre d'art"
-	);
-	$annonces = Leboncoin::getAnnonces($params);
+```php
+$params = array(
+    "query" => "Oeuvre d'art"
+);
+
+$lbc = new Leboncoin();
+$annonces = $lbc->getAnnonces($params);
+```
 
 **Options**
 
-    $params = array(
-		"query" => "Oeuvre d'art",
-		"title_only" => true,
-		"category" => Leboncoin::searchCategory("Décoration")->id,
-		"location" => array(
-			Leboncoin::searchLocation("Montpellier", true),
-			Leboncoin::searchLocation("Paris", true)
-		),
-		"sortby" => array("price" => "desc"),
-		"particuliers" => false
-	);
+```php
+$params = array(
+    "query" => "Oeuvre d'art",
+    "title_only" => true,
+    "category" => Leboncoin::searchCategory("Décoration")->id,
+    "location" => array(
+        Leboncoin::searchLocation("Montpellier", true),
+        Leboncoin::searchLocation("Paris", true)
+    ),
+    "sortby" => array("price" => "desc"),
+    "particuliers" => false
+);
+```
 
 **Limiter le nombre de résultats**
 
-    Leboncoin::nombreResultats(10);
+```php
+$lbc = new Leboncoin();
+$lbc->setResultLimit(10);
+```
 
 **Annonces d'un utilisateur**
 
-    $params = array(
-		"sortby" => array("price" => "asc")
-	);
-	$annonces = Leboncoin::getAnnoncesUser("a2db2eb9-6330-4ad7-9442-a1SJ09c9f236", $params);
+```php
+$params = array(
+    "sortby" => array("price" => "asc")
+);
+
+$lbc = new Leboncoin();
+$annonces = $lbc->getAnnoncesUser("a2db2eb9-6330-4ad7-9442-a1SJ09c9f236", $params);
+```
 
 **Récupérer une annonce**
 
-    use Absmoca\Annonce;
-    $annonce = new Annonce(1512169842);
+```php
+$lbc = new Leboncoin();
+$annonce = $lbc->getAnnonce(1512169842);
+```
 
 **Connexion au compte**
 
-    use Absmoca\User;
-    $account = new User();
-    $account->connexion('user@gmail.com', 'pasSworD1289');
-
-**Déconnexion du compte**
-
-    $account->logout();
+```php
+$lbc = new Leboncoin();
+$lbc->login('user@gmail.com', 'pasSworD1289');
+```
 
 Cauquil Thomas | https://thomascauquil.fr
 
