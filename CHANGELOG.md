@@ -1,3 +1,7 @@
+## 3.0
+- Correction de bugs
+- Ajout des tests unitaires
+- Plus de typage
 ## 2.0
 - Amélioration du code
 - Utilisation d'objets et plus d'appels static

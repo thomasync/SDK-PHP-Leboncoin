@@ -6,7 +6,7 @@ namespace Absmoca;
  * API LEBONCOIN PHP
  *
  * @author     Cauquil Thomas <contact@thomascauquil.fr> @absmoca
- * @version    1.1
+ * @version    3.0
  *
  */
 class Leboncoin

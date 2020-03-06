@@ -1,5 +1,5 @@
 # SDK PHP LEBONCOIN
-
+[![Build Status](https://travis-ci.org/absmoca/SDK-PHP-Leboncoin.svg?branch=master)](https://travis-ci.org/absmoca/SDK-PHP-Leboncoin)
 > SDK du plus célèbre site entre particuliers en France
 
  - Recherche d'annonces via plusieurs paramètres
