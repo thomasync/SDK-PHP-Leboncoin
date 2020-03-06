@@ -36,7 +36,8 @@ class LeboncoinTest extends TestCase
         $finds = 0;
         /* @var $annonce \Absmoca\Annonce */
         foreach ($annonces->annonces as $annonce) {
-            if($annonce->getOwner()["type"] == "pro") $finds =+ 1;
+            $owner = $annonce->getOwner();
+            if(!isset($owner["type"]) || $owner["type"] == "pro") $finds++;
         }
         $this->assertEquals(0, $finds);
     }
@@ -51,7 +52,8 @@ class LeboncoinTest extends TestCase
         $finds = 0;
         /* @var $annonce \Absmoca\Annonce */
         foreach ($annonces->annonces as $annonce) {
-            if($annonce->getOwner()["type"] == "private") $finds =+ 1;
+            $owner = $annonce->getOwner();
+            if(!isset($owner["type"]) || $owner["type"] == "private") $finds++;
         }
         $this->assertEquals(0, $finds);
     }

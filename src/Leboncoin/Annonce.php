@@ -84,7 +84,6 @@ class Annonce
             && isset($data->category_name)
             && isset($data->body)
             && isset($data->url)
-            && isset($data->price)
             && isset($data->images)
             && isset($data->location)
             && isset($data->owner)
