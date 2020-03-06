@@ -73,28 +73,39 @@ class Annonce
      * Créer l'object Annonce à partir d'un objet issue de l'API
      *
      * @param object $date Peut-être récupéré via getAnnonces ou donné via un ID d'annonce
-     * @return Annonce
+     * @throws \Exception
      */
-    public static function parse($data)
-    {
-        $annonce = new Annonce();
-        $annonce->setId((int)$data->list_id);
-        $annonce->setName($data->subject);
-        $annonce->setDate(new \DateTime($data->index_date));
-        $annonce->setCategoryId((int)$data->category_id);
-        $annonce->setCategoryName($data->category_name);
-        $annonce->setDescription($data->body);
-        $annonce->setUrl($data->url);
-        $annonce->setPrice((int)(isset($data->price[0])) ? $data->price[0] : null);
-        $annonce->setImages(
-            (isset($data->images->urls) && count($data->images->urls) > 0) ? $data->images->urls : null
-        );
-        $annonce->setAttributes((isset($data->attributes)) ? $data->attributes : null);
-        $annonce->setLocation((array)$data->location);
-        $annonce->setOwner((array)$data->owner);
-        $annonce->setPhone((boolean)$data->has_phone);
-
-        return $annonce;
+    public function __construct($data = null) {
+        if(is_object($data)
+            && isset($data->list_id)
+            && isset($data->subject)
+            && isset($data->index_date)
+            && isset($data->category_id)
+            && isset($data->category_name)
+            && isset($data->body)
+            && isset($data->url)
+            && isset($data->price)
+            && isset($data->images)
+            && isset($data->location)
+            && isset($data->owner)
+            && isset($data->has_phone)
+        ){
+            $this->setId((int)$data->list_id);
+            $this->setName($data->subject);
+            $this->setDate(new \DateTime($data->index_date));
+            $this->setCategoryId((int)$data->category_id);
+            $this->setCategoryName($data->category_name);
+            $this->setDescription($data->body);
+            $this->setUrl($data->url);
+            $this->setPrice((int)(isset($data->price[0])) ? $data->price[0] : null);
+            $this->setImages(
+                (isset($data->images->urls) && count($data->images->urls) > 0) ? $data->images->urls : null
+            );
+            $this->setAttributes((isset($data->attributes)) ? $data->attributes : null);
+            $this->setLocation((array)$data->location);
+            $this->setOwner((array)$data->owner);
+            $this->setPhone((boolean)$data->has_phone);
+        }
     }
 
     /**
@@ -117,10 +128,13 @@ class Annonce
 
     /**
      * @param int $id
+     * @throws \Exception
      */
     public function setId(int $id): void
     {
-        $this->id = $id;
+        if($id > 0){
+            $this->id = $id;
+        } else throw new \Exception("Id invalide");
     }
 
     /**

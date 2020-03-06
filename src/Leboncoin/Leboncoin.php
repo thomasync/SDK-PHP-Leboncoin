@@ -104,7 +104,8 @@ class Leboncoin
      * ['particuliers'] boolean(false) : Masque les annonces de particuliers,
      * ['professionnels'] boolean(false) : Masque les annonces de professionnels
      * @param integer $page Numéro de la page
-     * @return Annonce[]
+     * @return Object|bool
+     * @throws \Exception
      */
     public function getAnnonces($params, $page = 0)
     {
@@ -114,20 +115,22 @@ class Leboncoin
             return false;
         }
         foreach ($result->ads as $k => $a) {
-            $a = Annonce::parse($a);
-            $annonces['annonces'][] = $a;
+            try {
+                $annonces['annonces'][] = new Annonce($a);
+            } catch(\Exception $ex) {}
         }
 
-        return $annonces;
+        return (Object) $annonces;
     }
 
     /**
      * Permet de rechercher les annonces d'un utilisateur spécifique
      *
      * @param string $userId
-     * @param  boolean|array $params Parametres donnés à la recherche (voir getAnnonces)
-     * @param  integer $page Numéro de le page
-     * @return Annonce[]          Retourne le résultat de getAnnonces
+     * @param boolean|array $params Parametres donnés à la recherche (voir getAnnonces)
+     * @param integer $page Numéro de le page
+     * @return bool|Object
+     * @throws \Exception
      */
     public function getAnnoncesUser($userId, $params = null, $page = 0)
     {
@@ -144,7 +147,7 @@ class Leboncoin
      * @param  array $params Formate les paramètres en json
      * @return string
      */
-    public function filterMapGetAnnonces($params, $page)
+    private function filterMapGetAnnonces($params, $page)
     {
         // Limit
         $post = array("limit" => $this->resultLimit, "limit_alu" => 3, "filters" => array());
@@ -176,9 +179,9 @@ class Leboncoin
 
         // Category
         if (isset($params['category'])) {
-            $post['filters']['category'] = array('id' => (string)$params['category']);
+            $post['filters']['category'] = (Object) array('id' => (string)$params['category']);
         } else {
-            $post['filters']['category'] = array();
+            $post['filters']['category'] = (Object) array();
         }
 
         // Location
@@ -196,21 +199,10 @@ class Leboncoin
                     $l['city_zipcodes'][] = array("zipcode" => (string)$zipcode);
                 }
             }
-            /*if (empty($l) && is_array($params['location'])) {
-                $l = array();
-                $z = array();
-                foreach ($params['location'] as $ll) {
-                    if ($ll['zipcode']) {
-                        $z[] = array("zipcode" => $ll['zipcode']);
-                    }
-                }
-                if (count($z) > 0) {
-                    $l['city_zipcodes'] = $z;
-                } else {
-                    $l["regions"] = array($params['location'][0]['region_id']);
-                }
-            }*/
+        } else {
+            $l = array("locations" => []);
         }
+
         $post['filters']['location'] = $l;
 
         // Sort
@@ -237,14 +229,16 @@ class Leboncoin
     /**
      * Rechercher une annonce via son ID depuis la classe Annonce
      *
-     * @param  integer $id ID de l'annonce
-     * @return Annonce
+     * @param integer $id ID de l'annonce
+     * @return Annonce|bool
+     * @throws \Exception
      */
     public function getAnnonce($id)
     {
+        if(!is_numeric($id)) return false;
         $response = $this->callApi("finder/classified/".$id);
-
-        return Annonce::parse($response);
+        if(!$response) return false;
+        return new Annonce($response);
     }
 
     /**
@@ -252,7 +246,7 @@ class Leboncoin
      *
      * @param  string $base Repertoire de l'API
      * @param  string $post Données de la recherche
-     * @return object
+     * @return Object|bool
      */
     protected function callApi($base, $post = false)
     {
@@ -264,10 +258,10 @@ class Leboncoin
     /**
      * Construit l'appel de l'API avec un access authentifié
      *
-     * @param  string $base Repertoire de l'API
-     * @param  string $access Token d'utilisateur
-     * @param  string $post Données de la recherche
-     * @return object
+     * @param string $base Repertoire de l'API
+     * @param string $access Token d'utilisateur
+     * @param bool|string $post Données de la recherche
+     * @return Object|bool
      */
     protected function callApiLogged($base, $access, $post = false)
     {
@@ -323,7 +317,7 @@ class Leboncoin
      *
      * @param string $n Lieu à rechercher
      * @param boolean $precis Si vrai récupère seulement le premier résultat de façon précise (pas la région)
-     * @return array of object(city, zipcode, region_id, department_id, label)
+     * @return array|bool
      */
     public function searchLocation($n, $precis = false)
     {
@@ -335,7 +329,7 @@ class Leboncoin
         if (!$precis) {
             return $r;
         } else {
-            if (count($r) > 1 && preg_match('#(toute la ville)#i', $r[0]->label)) {
+            if (count($r) > 1 && preg_match('#(toute la ville|toutes les communes)#i', $r[0]->label)) {
                 return $r[1];
             } else {
                 return $r[0];
@@ -370,11 +364,11 @@ class Leboncoin
     /**
      * Récuperer des données via une requete HTTP
      *
-     * @param  string $url Lien où l'on vas récuperer les données
-     * @param  (string|boolean) $post Si des données POST seront à envoyer
-     * @param  (string|boolean) $access Pour donner un token d'access
-     * @param  (string|boolean) $cookie Si des données COOKIE seront à envoyer
-     * @param  boolean $cache Spécifie le controle du cache
+     * @param string $url Lien où l'on vas récuperer les données
+     * @param string|bool $post Si des données POST seront à envoyer
+     * @param string|bool $access Pour donner un token d'access
+     * @param string|bool $cookie Si des données COOKIE seront à envoyer
+     * @param bool $cache Spécifie le controle du cache
      * @return string
      */
     private function curl($url, $post = false, $access = false, $cookie = false, $cache = false)
@@ -429,9 +423,9 @@ class Leboncoin
     /**
      * Connexion de l'utilisateur
      *
-     * @param  string $username Adresse email
-     * @param  string $password Mot de passe
-     * @return boolean          Retourne le résultat de la connexion, si vrai appelle getInfosAccount
+     * @param string $username Adresse email
+     * @param string $password Mot de passe
+     * @return bool Retourne le résultat de la connexion, si vrai appelle getInfosAccount
      */
     public function login($username, $password)
     {
@@ -443,7 +437,6 @@ class Leboncoin
             $this->token = $call->access_token;
             $this->refreshToken = $call->refresh_token;
             $this->getInfosAccount();
-
             return true;
         } else {
             return false;
@@ -472,21 +465,23 @@ class Leboncoin
             (isset($call->personalData->phones->main->number)) ? $call->personalData->phones->main->number : null
         );
         $user->setPseudo($call->personalData->pseudo);
-        $user->setBirthDate(
-            (isset($call->personalData->birthDate->day)) ? new \DateTime(
-                $call->personalData->birthDate->day.'-'.$call->personalData->birthDate->month.'-'.$call->personalData->birthDate->year
-            ) : null
-        );
-
+        try {
+            $user->setBirthDate(
+                (isset($call->personalData->birthDate->day)) ? new \DateTime(
+                    $call->personalData->birthDate->day.'-'.$call->personalData->birthDate->month.'-'.$call->personalData->birthDate->year
+                ) : null
+            );
+        } catch(\Exception $ex) {}
         $this->user = $user;
     }
 
     /**
      * Récupérer les annonces de l'utilisateur connecté
      *
-     * @param  boolean|array $params Parametres donnés à la recherche (voir getAnnonces)
-     * @param  integer $page Numéro de le page
-     * @return Annonce[]          Retourne le résultat de getAnnoncesUser
+     * @param bool|array $params Parametres donnés à la recherche (voir getAnnonces)
+     * @param integer $page Numéro de le page
+     * @return bool|Object
+     * @throws \Exception
      */
     public function getMyAnnonces($params = false, $page = 0)
     {
