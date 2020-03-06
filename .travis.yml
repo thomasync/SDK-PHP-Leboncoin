@@ -4,12 +4,12 @@ language: php
 php:
   - 7.1
   - 7.2
-  - hhvm
+  - 7.3
+  - 7.4
 matrix:
-  allow_failures:
-    - php: hhvm
   fast_finish: true
 before_script:
+  - composer self-update
   - composer install
 script:
   - vendor/bin/phpunit ./tests
