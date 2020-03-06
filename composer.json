@@ -10,9 +10,9 @@
     ],
     "require": {
     	"php": ">=7.1",
-        "ext-json": "^1.6",
-        "ext-curl": "^7.1",
-        "ext-mbstring": "^7.1"
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"
