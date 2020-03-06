@@ -493,7 +493,7 @@ class Leboncoin
     }
 
     /**
-     * @return User
+     * @return User|null
      */
     public function getUser(): ?User
     {
