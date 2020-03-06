@@ -286,7 +286,7 @@ class Annonce
      */
     public function getLocation(): array
     {
-        return $this->location;
+        return (is_array($this->location)) ? $this->location : array();
     }
 
     /**
@@ -302,7 +302,7 @@ class Annonce
      */
     public function getOwner(): array
     {
-        return $this->owner;
+        return (is_array($this->owner)) ? $this->owner : array();
     }
 
     /**

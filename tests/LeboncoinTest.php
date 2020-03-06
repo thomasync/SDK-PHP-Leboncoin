@@ -11,7 +11,6 @@ class LeboncoinTest extends TestCase
             "query" => ""
         );
         $annonces = $lbc->getAnnonces($params);
-        print_r($annonces);
         $this->assertTrue(count($annonces->annonces) > 0);
     }
 
