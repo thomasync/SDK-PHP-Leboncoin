@@ -356,7 +356,7 @@ class Leboncoin
      * @param  string $str Chaine à utiliser
      * @return string
      */
-    private function simpleText($str)
+    private function simpleText($str): string
     {
         return trim(preg_replace('#[^a-z0-9]#', '', mb_strtolower(urldecode($str), 'UTF-8')));
     }
@@ -371,7 +371,7 @@ class Leboncoin
      * @param bool $cache Spécifie le controle du cache
      * @return string
      */
-    private function curl($url, $post = false, $access = false, $cookie = false, $cache = false)
+    private function curl($url, $post = false, $access = false, $cookie = false, $cache = false): string
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -427,7 +427,7 @@ class Leboncoin
      * @param string $password Mot de passe
      * @return bool Retourne le résultat de la connexion, si vrai appelle getInfosAccount
      */
-    public function login($username, $password)
+    public function login($username, $password): bool
     {
         $call = $this->callApi(
             "api/oauth/v1/token",
@@ -483,7 +483,7 @@ class Leboncoin
      * @return bool|Object
      * @throws \Exception
      */
-    public function getMyAnnonces($params = false, $page = 0)
+    public function getMyAnnonces($params = false, $page = 0): array
     {
         if (!$this->user) {
             throw new \RuntimeException('Not logged in');
